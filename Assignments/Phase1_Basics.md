@@ -45,13 +45,45 @@
 
 **1. 更换国内镜像源：**
 - 搜索 "Ubuntu 更换国内镜像源" 并按照教程修改 `/etc/apt/sources.list` 文件
+
 - **注意：修改前务必备份原文件！** 
   ```bash
   sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
   ```
+  
 - 修改后运行 `sudo apt update`
 
+- **香橙派 tips**：
+
+  在阿里官网找到对应版本代码并替换
+
+  ```
+  deb https://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+  deb-src https://mirrors.aliyun.com/ubuntu-ports/ focal main restricted universe multiverse
+  
+  deb https://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+  deb-src https://mirrors.aliyun.com/ubuntu-ports/ focal-security main restricted universe multiverse
+  
+  deb https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+  deb-src https://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+  
+  #deb https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+  #deb-src https://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+  
+  deb https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+  deb-src https://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+  ```
+
+  反馈 : failed，有些not founded，
+
+  问Gemini，说香橙派为` ARM `架构，因此需要使用 `ubuntu-ports` 镜像源。
+
+  将代码中原来的`/ubuntu/`全部替换成`/ubuntu-ports/`
+
+  再输入命令`/sudo apt update/`,成功。
+
 **2. 学习 sudo：**
+
 - 学习 `sudo` 命令，尝试执行需要管理员权限的命令（如 `sudo apt update`）
 - 理解 `/etc/sudoers` 文件的基本作用（**不要直接编辑此文件！**）
 

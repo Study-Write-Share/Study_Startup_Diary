@@ -1,6 +1,6 @@
 # Startup Study Diary - ROS 与无人机学习项目
 
-### Git 工作流程
+### Git 工作流程_每次开发都要遵循此开发流程，以保持颗粒度
 ```bash
 # 1. 拉取最新代码
 git pull origin main
@@ -160,4 +160,5 @@ git pull                       #拉取main分支的最新内容
 
 
 20251026 Tiger@NUAA
+
 

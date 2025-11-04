@@ -1,5 +1,33 @@
 # Startup Study Diary - ROS 与无人机学习项目
 
+### Git 工作流程
+```bash
+# 1. 拉取最新代码
+git pull origin main
+
+# 2. 新建并切换分支
+git checkout -b your_branch_name
+
+# 4. 暂存修改
+git add changed_filenames
+
+# 5. 提交修改（遵循 Commit Message 规范）
+git commit -m "[Peach/Sheep][Phase1] Complete task 1.3"
+
+# 6. 推送到远程仓库
+git push --set-upstream origin test
+
+# 7. 在github上新建PULL REQUEST，按照https://github.com/Study-Write-Share/.github/tree/main/PULL_REQUEST_TEMPLATE上的模板来写PR
+
+# 8. PR被Approve后，在github上merge自己创建的分支到main分支，并在云端删除自己创建的分支
+
+# 9. 本地切换分支回main分支，删除开发过程中自己创建的branch，拉取最新的main分支
+git checkout main              #切换到main分支
+git branch -d your_branch_name #删除开发过程中自己创建的分支
+git pull                       #拉取main分支的最新内容
+
+```
+
 ## 项目目标 (Project Goal)
 
 本项目旨在理解和复现 `sl_sensor` 项目，并掌握基础的 ROS 无人机控制技能。通过系统化的学习路径，实现：
@@ -41,53 +69,6 @@
 - 调试工具使用（GDB、rqt_console）
 - 仿真环境中的传感器数据融合与可视化
 
-## 仓库结构 (Repository Structure)
-
-```
-Startup_Study_Diary/
-├── .gitignore          # ROS、C++、Python 等忽略文件配置
-├── README.md           # 本文件 - 项目总体说明
-├── Assignments/        # 各阶段任务要求
-│   ├── Phase1_Basics.md
-│   ├── Phase2_ROS_MAVROS.md
-│   ├── Phase3_Libraries.md
-│   ├── Phase4_Codebase_Integration.md
-│   └── Phase5_Replication_Simulation.md
-├── Peach/           # Peach的工作区
-│   ├── README.md
-│   ├── LearningLog.md  # 学习日志（使用提供的模板）
-│   ├── Phase1/Code/
-│   ├── Phase2/Code/
-│   ├── Phase3/Code/
-│   ├── Phase4/Code/
-│   └── Phase5/Code/
-├── Sheep/           # Sheep 的工作区（结构同Peach）
-│   ├── README.md
-│   ├── LearningLog.md
-│   ├── Phase1/Code/
-│   ├── Phase2/Code/
-│   ├── Phase3/Code/
-│   ├── Phase4/Code/
-│   └── Phase5/Code/
-├── Belief/           # Belief 的工作区（结构同Peach）
-│   ├── README.md
-│   ├── LearningLog.md
-│   ├── Phase1/Code/
-│   ├── Phase2/Code/
-│   ├── Phase3/Code/
-│   ├── Phase4/Code/
-│   └── Phase5/Code/
-├── Fish/           # Fish 的工作区（结构同Peach）
-│   ├── README.md
-│   ├── LearningLog.md
-│   ├── Phase1/Code/
-│   ├── Phase2/Code/
-│   ├── Phase3/Code/
-│   ├── Phase4/Code/
-│   └── Phase5/Code/
-└── Resources/          # 共享学习资料、链接等
-```
-
 ## 仓库使用指南 (Repository Usage)
 
 ### 如何查看任务
@@ -110,20 +91,7 @@ Startup_Study_Diary/
      - `[Sheep][Phase2] Add simple_offboard_control node`
      - `[Peach][Log] Week 3 learning summary`
 
-### Git 工作流程
-```bash
-# 1. 拉取最新代码
-git pull origin main
 
-# 2. 添加修改的文件
-git add .
-
-# 3. 提交修改（遵循 Commit Message 规范）
-git commit -m "[Peach/Sheep][Phase1] Complete task 1.3"
-
-# 4. 推送到远程仓库
-git push origin main
-```
 
 ## 学习日志规范 (Learning Log Guidelines)
 
@@ -192,3 +160,4 @@ git push origin main
 
 
 20251026 Tiger@NUAA
+
